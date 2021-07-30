@@ -32,6 +32,32 @@ try {
 } catch (err) {
   console.log("---configurable---", err.message);
 }
+// ---- configurable=false 可更改 writable
+Object.defineProperty(obj, 'a', {
+  value: 1,
+  configurable: false,
+  writable: true
+})
+console.log("---configurable---", obj.a);
+obj.a += 1
+console.log("---configurable---", obj.a);
+Object.defineProperty(obj, 'a', {
+  value: 3,
+  configurable: false,
+  writable: false
+})
+console.log("---configurable---", obj.a);
+obj.a += 1
+try {
+  Object.defineProperty(obj, 'a', {
+    value: 3,
+    configurable: false,
+    writable: true
+  })
+  console.log("---configurable---", obj.a);
+} catch (err) {
+  console.log("---configurable---", err.message);
+}
 // ==== 1. 数据属性 configurable ====
 
 // ==== 2. 数据属性 enumerable ====
@@ -42,6 +68,7 @@ Object.defineProperty(obj2, "b", {
   enumerable: false,
 });
 console.log("---configurable---", Object.keys(obj2));
+console.log("---configurable---", Object.getOwnPropertyNames(obj2))
 
 Object.defineProperty(obj2, "b", {
   value: 2,
