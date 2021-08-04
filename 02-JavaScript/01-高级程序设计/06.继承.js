@@ -10,4 +10,11 @@ function SubType() {
   this.sub = 2;
 }
 
-SubType.prototype = Object.create(SuperType.prototype)
+SubType.prototype = Object.create(SuperType.prototype);
+
+// Object.create() 模拟实现
+function _create(obj) {
+  function Fn() {}
+  Fn.prototype = obj;
+  return Fn;
+}
