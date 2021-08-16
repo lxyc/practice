@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    #tutorial {
+      border: 1px solid #000;
+    }
+  </style>
+</head>
+<body>
+  <canvas id="tutorial"></canvas>
+  <button onclick="handleClear()">CLEAR</button>
+
+  <script>
+    const canvas = document.querySelector('#tutorial');
+    const ctx = canvas.getContext('2d');
+    canvas.width = 500;
+    canvas.height = 500;
+    draw();
+
+    function draw() {
+      for(let i=0;i<4;i+=1) {
+        for(let j=0;j<3;j+=1) {
+          ctx.beginPath();
+          let x = 25 + j*50;
+          let y = 25 + i*50;
+          let radius = 20;
+          let startAngle = 0;
+          let endAngle = Math.PI+(Math.PI*j)/2;
+          let anticlockwise = i%2 === 0;
+
+          ctx.arc(x, y, radius, startAngle, endAngle, anticlockwise)
+          if (i > 1) {
+            ctx.fill()
+          } else {
+            ctx.stroke()
+          }
+        }
+      }
+    }
+
+    function handleClear() {
+      ctx.clearRect(0, 0, 500, 500);
+    }
+  </script>
+</body>
+</html>
