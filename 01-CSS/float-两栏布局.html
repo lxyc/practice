@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.container-float {
+			height: 100px;
+		}
+		.container-float > .left {
+			float: left;
+			width: 200px;
+			height: 100%;
+			background-color: #ccc;
+		}
+		.container-float > .right {
+			height: 100%;
+			overflow: hidden;
+			background-color: #bbb;
+		}
+	</style>
+</head>
+<body>
+	<div class="container-float">
+		<div class="left"></div>
+		<div class="right"></div>
+	</div>
+</body>
+</html>
