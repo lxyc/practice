@@ -1,0 +1,21 @@
+{
+  "name": "learn-webassembly",
+  "version": "1.0.0",
+  "description": "WebAssembly",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "server": "sh bin/server.sh",
+    "start:go": "sh bin/preset.sh && go run server.go"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lxyc/learn-webAssembly.git"
+  },
+  "author": "xyc <tech_xyc@163.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lxyc/learn-webAssembly/issues"
+  },
+  "homepage": "https://github.com/lxyc/learn-webAssembly#readme"
+}

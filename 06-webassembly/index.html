@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="text" id="value1" />
+    <input type="text" id="value2" />
+    <button type="button" id="add" onClick="add('value1', 'value2', 'result');">
+      add
+    </button>
+    <input type="text" id="result" />
+
+    <script src="wasm_exec.js"></script>
+    <script>
+      const go = new Go();
+      WebAssembly.instantiateStreaming(
+        fetch("./main.wasm"),
+        go.importObject
+      ).then((result) => {
+        go.run(result.instance);
+      });
+
+      const obj = {
+        a: 1
+      }
+
+      const fn = () => {
+        console.log(this.a)
+      }
+      fn.apply(obj)
+    </script>
+  </body>
+</html>

@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function fetchAndInstantiate(url, importObject) {
+        return fetch(url)
+          .then((response) => response.arrayBuffer())
+          .then((bytes) => WebAssembly.instantiate(bytes, importObject))
+          .then((module) => module.instance);
+      }
+
+      var memory = new WebAssembly.Memory({ initial: 1, maximum: 10 });
+      fetchAndInstantiate("./main.wasm", { js: { mem: memory } }).then(
+        (instance) => {
+          var i32 = new Uint32Array(memory.buffer);
+          for (var i = 0; i < 32; i++) {
+            i32[i] = i;
+          }
+          console.log(instance.exports.sum(0, 32)); // 496
+        }
+      );
+    </script>
+  </body>
+</html>

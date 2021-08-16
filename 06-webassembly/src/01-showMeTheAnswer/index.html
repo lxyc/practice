@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // fetch("./main.wasm")
+      //   .then((response) => response.arrayBuffer())
+      //   .then((bytes) => WebAssembly.instantiate(bytes))
+      //   .then((module) => {
+      //     console.log(module.instance.exports.showMeTheAnswer());
+      //   });
+
+      // compile
+      fetch("./main.wasm")
+        .then((response) => response.arrayBuffer())
+        .then((bytes) => WebAssembly.compile(bytes))
+        .then((module) => {
+          console.log(module.toString());
+        });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1 @@
+GOARCH=wasm GOOS=js go build -o main.wasm go/02-counter.go

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      // fetch("./main.wasm")
+      //   .then((response) => response.arrayBuffer())
+      //   .then((bytes) => {
+      //     const module = new WebAssembly.Module(bytes);
+      //     console.log(module.toString());
+      //   });
+
+      // fetch("./main.wasm")
+      //   .then((response) => response.arrayBuffer())
+      //   .then((bytes) => WebAssembly.compile(bytes))
+      //   .then((module) => {
+      //     const exports = WebAssembly.Module.exports(module);
+      //     console.log(exports);
+      //   });
+
+      // fetch("./main.wasm")
+      //   .then((response) => response.arrayBuffer())
+      //   .then((bytes) => WebAssembly.compile(bytes))
+      //   .then((module) => {
+      //     const imports = WebAssembly.Module.imports(module);
+      //     console.log(imports);
+      //   });
+
+      // 有导入时必须提供导入信息
+      var wasmMem = new WebAssembly.Memory({ initial: 1 });
+      var importObj = { js: { print: console.log, mem: wasmMem } };
+      fetch("./main.wasm")
+        .then((response) => response.arrayBuffer())
+        .then((bytes) => WebAssembly.compile(bytes))
+        .then((module) => {
+          WebAssembly.instantiate(module, importObj);
+        });
+    </script>
+  </body>
+</html>
