@@ -1,0 +1,1 @@
+process.stdout.write('This is a child_process\n');
