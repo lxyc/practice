@@ -1,0 +1,28 @@
+{
+	"parentStyleSheet": null,
+	"cssRules": [
+		{
+			"parentRule": null,
+			"parentStyleSheet": "[parentStyleSheet Circular ~ ../..]",
+			"selectorText": "body",
+			"style": {
+				"0": "color",
+				"1": "box-sizing",
+				"2": "border-radius",
+				"length": 3,
+				"parentRule": "[parentRule Circular ~ ..]",
+				"_importants": {
+					"color": "",
+					"box-sizing": "",
+					"border-radius": ""
+				},
+				"__starts": 5,
+				"color": "balck",
+				"box-sizing": "border-box",
+				"border-radius": "50%"
+			},
+			"__starts": 0,
+			"__ends": 69
+		}
+	]
+}
