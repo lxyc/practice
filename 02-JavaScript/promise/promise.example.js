@@ -53,20 +53,27 @@
 // const p2 = p1.then(2);
 // p2.then(console.log)
 
-Promise.reject(1)
-	.then(null, (reason) => {
-		console.log(reason);
-		return 2;
-	})
+// Promise.reject(1)
+// 	.then(null, (reason) => {
+// 		console.log(reason);
+// 		return 2;
+// 	})
 	
-  .catch((reason) => {
-    console.log(reason);
-    return 3;
-  })
-  .then((value) => {
-    console.log(value);
-    throw 4;
-  })
-  .catch((reason) => {
-    console.log(reason);
-  });
+//   .catch((reason) => {
+//     console.log(reason);
+//     return 3;
+//   })
+//   .then((value) => {
+//     console.log(value);
+//     throw 4;
+//   })
+//   .catch((reason) => {
+//     console.log(reason);
+//   });
+
+Promise.resolve(1).then(console.log)
+Promise.resolve({then: (resolve) => resolve(2)}).then(console.log)
+const p1 = Promise.resolve(3)
+const p2 = Promise.resolve(p1)
+console.log(p1 === p2);
+p2.then(console.log); // 3
