@@ -1,0 +1,15 @@
+{
+  "name": "promise",
+  "version": "1.0.0",
+  "description": "",
+  "main": "Promise.js",
+  "scripts": {
+    "test": "node_modules/.bin/promises-aplus-tests ./Promise.js"
+  },
+  "keywords": [],
+  "author": "xyc <tech_xyc@163.com>",
+  "license": "ISC",
+  "dependencies": {
+    "promises-aplus-tests": "2.1.2"
+  }
+}
