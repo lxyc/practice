@@ -1,13 +1,13 @@
 Promise.resolve()
-  .then(() => { // m-1-1: promise1
+  .then(() => {
     console.log('promise1');
     return new Promise((resolve, reject) => {
-        setTimeout(() => { // M-1
+        setTimeout(() => {
           console.log('timer2')
           resolve()
         }, 0)
     })
-      .then(async () => { // m-2-1
+      .then(async () => {
         await foo();
         return new Error('error1')
       })
@@ -38,17 +38,17 @@ Promise.resolve()
         console.log(err);
       })
   })
-  .then(() => { // m-2-1
+  .then(() => {
     console.log('promise2');
   })
 
 function foo() {
-  setTimeout(() => { // M-3
+  setTimeout(() => { 
     console.log('async1');
   }, 2 * 1000);
 }
 
-setTimeout(() => { // M-
+setTimeout(() => {
   console.log('timer1')
   Promise.resolve()
     .then(() => {
@@ -56,7 +56,4 @@ setTimeout(() => { // M-
     })
 }, 0)
 
-console.log('start'); // M-0
-
-// marco-0: start
-// 
+console.log('start');

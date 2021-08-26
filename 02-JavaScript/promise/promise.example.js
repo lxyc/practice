@@ -71,9 +71,34 @@
 //     console.log(reason);
 //   });
 
-Promise.resolve(1).then(console.log)
-Promise.resolve({then: (resolve) => resolve(2)}).then(console.log)
-const p1 = Promise.resolve(3)
-const p2 = Promise.resolve(p1)
-console.log(p1 === p2);
-p2.then(console.log); // 3
+// Promise.resolve(1).then(console.log)
+// Promise.resolve({then: (resolve) => resolve(2)}).then(console.log)
+// const p1 = Promise.resolve(3)
+// const p2 = Promise.resolve(p1)
+// console.log(p1 === p2);
+// p2.then(console.log); // 3
+
+new Promise((resolve) => {
+	console.log(1);
+	resolve();
+}).then(() => {
+	console.log(2);
+	new Promise((resolve) => {
+		console.log(3);
+		resolve()
+	}).then(() => {
+		console.log(4)
+		new Promise((resolve) => {
+			console.log(5);
+			resolve()
+		}).then(() => {
+			console.log(6);
+		}).then(() => {
+			console.log(7);
+		})
+	}).then(() => {
+  	console.log(8);
+  })
+}).then(() => {
+	console.log(9);
+})
