@@ -1,5 +1,9 @@
-import typescript from "rollup-plugin-typescript2";
-import json from "rollup-plugin-json";
+import json from "@rollup/plugin-json"; // 处理 json
+import commonjs from '@rollup/plugin-commonjs'; // 支持 common.js
+import { babel } from "@rollup/plugin-babel"; // 处理 es6
+import { nodeResolve } from '@rollup/plugin-node-resolve'; // node_modules 第三方库定位插件
+import typescript from "rollup-plugin-typescript2"; // 处理 typescript
+import { terser } from "rollup-plugin-terser"; // 压缩
 
 const pkg = require("./package.json");
 
@@ -8,7 +12,7 @@ export default {
   output: [
     {
       file: pkg.main,
-      format: "cjs",
+      format: "cjs"
     },
     {
       file: pkg.module,
@@ -20,5 +24,12 @@ export default {
       name: "rumble",
     },
   ],
-  plugins: [typescript(), json()],
+  plugins: [
+    json(),
+    typescript(),
+    nodeResolve(),
+    commonjs(),
+    babel({ babelHelpers: "bundled" }),
+    terser()
+  ],
 };
