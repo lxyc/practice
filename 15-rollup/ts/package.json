@@ -1,0 +1,23 @@
+{
+  "name": "rumble",
+  "version": "1.0.0",
+  "description": "",
+  "main": "lib/rumble.common.js",
+  "module": "lib/rumble.esm.js",
+  "unpkg": "lib/rumble.js",
+  "typings": "lib/index.d.ts",
+  "scripts": {
+    "build": "rollup --config rollup.config.js"
+  },
+  "keywords": [],
+  "author": "xyc <tech_xyc@163.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "rollup": "2.56.3",
+    "rollup-plugin-typescript2": "0.30.0",
+    "typescript": "4.4.2"
+  },
+  "dependencies": {
+    "rollup-plugin-json": "4.0.0"
+  }
+}
