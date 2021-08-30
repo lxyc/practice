@@ -1,4 +1,5 @@
 const { src, dest, series } = require("gulp");
+const babel = require("gulp-babel");
 const del = require("del");
 
 const config = {
@@ -14,7 +15,13 @@ function clean(cb) {
 
 // 复制文件到目标文件夹
 function copy(cb) {
-  src(config.src).pipe(dest(config.dest));
+  src(config.src)
+    .pipe(
+      babel({
+        presets: ["@babel/env"],
+      })
+    )
+    .pipe(dest(config.dest));
   cb();
 }
 
