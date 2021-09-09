@@ -1,9 +1,10 @@
-import React from 'react';
+import { ClassClock, FuncClock } from "./examples/clock";
 
 function App() {
   return (
     <div className="App">
-      TEST
+      <ClassClock />
+      <FuncClock />
     </div>
   );
 }
