@@ -1,13 +1,13 @@
 import React from 'react';
 import styles from './App.module.less';
 
-import LifeCycle from './LifeCycle'
+import SingleMount from './LifeCycle/SingleMount'
 
 function App() {
   return (
     <div className={styles.App}>
       APP
-      <LifeCycle />
+      <SingleMount name="SingleMount" />
     </div>
   );
 }
