@@ -1,16 +1,16 @@
 import React from "react";
 const { log } = console;
 
-interface LifeCycleState {
+interface ClassComponentState {
   count: number;
 }
-interface LifeCycleProps {}
-export default class LifeCycle extends React.Component<
-  LifeCycleProps,
-  LifeCycleState
+interface ClassComponentProps {}
+export default class ClassComponent extends React.Component<
+  ClassComponentProps,
+  ClassComponentState
 > {
-  state: LifeCycleState = { count: 0 };
-  constructor(props: LifeCycleProps) {
+  state: ClassComponentState = { count: 0 };
+  constructor(props: ClassComponentProps) {
     super(props);
     log("---constructor---");
   }
