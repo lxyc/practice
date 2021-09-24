@@ -1,11 +1,12 @@
 import React from "react";
-import ThemeContext, { EnumTheme } from "./themeContext";
+// import ThemeContext, { EnumTheme,  } from "./themeContext";
+import ThemeContext, { EnumTheme, ThemeProvider } from "./themeContextOptimize";
 
 const FunctionBase = () => {
   const themeState = React.useState(EnumTheme.dark);
 
   return (
-		// 通过 ThemeContext.Provider，其后代组件均可获取 value 中的值
+    // 通过 ThemeContext.Provider，其后代组件均可获取 value 中的值
     <ThemeContext.Provider value={themeState}>
       <Parent>
         <Child />
@@ -14,8 +15,16 @@ const FunctionBase = () => {
   );
 };
 
+const OptimizeBase = () => (
+  <ThemeProvider>
+    <Parent>
+      <Child />
+    </Parent>
+  </ThemeProvider>
+);
+
 const Parent = (props: { children: React.ReactNode }) => {
-	// useContext 获取指定的 Context 对象
+  // useContext 获取指定的 Context 对象
   const [theme] = React.useContext(ThemeContext);
   return (
     <div>
@@ -27,7 +36,7 @@ const Parent = (props: { children: React.ReactNode }) => {
 };
 
 const Child = () => {
-	// useContext 获取指定的 Context 对象
+  // useContext 获取指定的 Context 对象
   const [theme, setTheme] = React.useContext(ThemeContext);
   return (
     <div>
@@ -45,4 +54,4 @@ const Child = () => {
   );
 };
 
-export default FunctionBase;
+export default OptimizeBase;

@@ -1,5 +1,5 @@
 import ClassBase from "./ClassBase";
-import FunctionBase from "./FunctionBase";
+// import FunctionBase from "./FunctionBase";
 
 const Context = () => {
   return <ClassBase />;
