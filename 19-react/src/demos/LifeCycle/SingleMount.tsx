@@ -4,7 +4,7 @@ interface SingleMountProps {
   name: string;
 }
 export default class SingleMount extends React.Component<SingleMountProps> {
-  state = { b: 2, a: 3 };
+  state = {}
   constructor(props: SingleMountProps) {
     super(props);
     this.log("constructor");
@@ -12,7 +12,11 @@ export default class SingleMount extends React.Component<SingleMountProps> {
 
   static getDerivedStateFromProps(props: SingleMountProps) {
     console.log(`--${props.name}--getDerivedStateFromProps--`);
-    return { a: 1 };
+    return null;
+  }
+
+  componentDidMount() {
+    this.log("componentDidMount");
   }
 
   log(...args: string[]) {
@@ -20,7 +24,7 @@ export default class SingleMount extends React.Component<SingleMountProps> {
   }
 
   render() {
-    this.log("render", JSON.stringify(this.state));
-    return <div>SingleMount</div>;
+    this.log("render");
+    return <div>{this.props.name}</div>;
   }
 }
