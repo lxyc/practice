@@ -1,19 +1,21 @@
-import React from "react";
 import styles from "./App.module.less";
 
-import StrictMode from './StrictMode'
+import StrictMode from "./StrictMode";
 import Key from "./Key";
 import LifeCycle from "./LifeCycle";
+import FunctionLifeCycle from "./FunctionLifeCycle";
 
 function App() {
   return (
     <div className={styles.App}>
       <p>---StrictMode---</p>
-      <StrictMode />
+      {false && <StrictMode />}
       <p>---key---</p>
-      <Key />
+      {false && <Key /> }
       <p>---LifeCycle---</p>
-      <LifeCycle />
+      {false && <LifeCycle /> }
+      <p>---FunctionLifeCycle---</p>
+      <FunctionLifeCycle />
     </div>
   );
 }
