@@ -1,12 +1,14 @@
 import React from "react";
-import SingleMount from './SingleMount'
+import Single from "./Single";
 
 export default class ParentMount extends React.Component {
   render() {
-    return <div>
-      <SingleMount name="parent">
-        <SingleMount name="child" />
-      </SingleMount>
-    </div>
+    return (
+      <div>
+        <Single name="parent">
+          <Single name="child" />
+        </Single>
+      </div>
+    );
   }
 }

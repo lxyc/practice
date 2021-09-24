@@ -1,5 +1,5 @@
 import React from "react";
-import SingleUnmount from "./SingleUnmount";
+import Single from "./Single";
 
 export default class ParentUnmount extends React.Component {
   state = {
@@ -9,18 +9,16 @@ export default class ParentUnmount extends React.Component {
   render() {
     return (
       <div>
+        <button onClick={() => this.setState({ hideParent: true })}>
+          hide parent
+        </button>
+        <button onClick={() => this.setState({ hideChild: true })}>
+          hide child
+        </button>
         {!this.state.hideParent && (
-          <SingleUnmount
-            name="parent"
-            onClick={() => this.setState({ hideParent: true })}
-          >
-            {!this.state.hideChild && (
-              <SingleUnmount
-                name="child"
-                onClick={() => this.setState({ hideChild: true })}
-              />
-            )}
-          </SingleUnmount>
+          <Single name="parent">
+            {!this.state.hideChild && <Single name="child" />}
+          </Single>
         )}
       </div>
     );

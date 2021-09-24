@@ -1,8 +1,7 @@
 import React from "react";
 
-interface SingleMountProps {
+export default interface SingleMountProps {
   name: string;
-  onClick?: () => void
 }
 interface SingleMountState {
   count: number;
@@ -20,7 +19,7 @@ export default class SingleMount extends React.Component<SingleMountProps> {
   }
 
   componentDidMount() {
-    // this.setState({ count: 1 });
+    this.setState({ count: 1 });
     this.log("componentDidMount");
   }
 
@@ -52,23 +51,8 @@ export default class SingleMount extends React.Component<SingleMountProps> {
     console.log(`--${this.props.name}--${args.join()}--`);
   }
 
-  handleClick() {
-    this.setState({ count: 1 });
-    this.props.onClick?.()
-  }
-
   render() {
     this.log("render");
-    return (
-      <div>
-        <div>{this.props.name}</div>
-        <div>
-          <button onClick={this.handleClick.bind(this)}>
-            {this.props.name} CHANGE
-          </button>
-        </div>
-        <div>{this.props.children}</div>
-      </div>
-    );
+    return <div>{this.props.name}</div>;
   }
 }

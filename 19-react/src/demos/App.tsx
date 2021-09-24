@@ -6,7 +6,10 @@ import styles from "./App.module.less";
 // import SingleUnmount from "./LifeCycle/SingleUnmount";
 // import ParentMount from './LifeCycle/ParentMount'
 // import ParentUpdate from './LifeCycle/ParentUpdate'
-import ParentUnmount from './LifeCycle/ParentUnmount'
+// import ParentUnmount from './LifeCycle/ParentUnmount'
+// import SiblingMount from './LifeCycle/SiblingMount'
+// import SiblingUpdate from './LifeCycle/SiblingUpdate'
+// import SiblingUnmount from './LifeCycle/SiblingUnmount'
 
 // import Key from "./Key";
 
@@ -20,7 +23,10 @@ function App() {
       {/* {Boolean(name) && <SingleUnmount name="SingleMount" /> } */}
       {/* <ParentMount /> */}
       {/* <ParentUpdate /> */}
-      <ParentUnmount />
+      {/* <ParentUnmount /> */}
+      {/* <SiblingMount /> */}
+      {/* <SiblingUpdate /> */}
+      {/* <SiblingUnmount /> */}
       <button onClick={() => setName((p) => p + "1234")}>CHANGE</button>
       <button onClick={() => setName('')}>Hide</button>
       {/* <Key /> */}

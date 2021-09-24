@@ -4,7 +4,7 @@ interface SingleMountProps {
   name: string;
 }
 export default class SingleMount extends React.Component<SingleMountProps> {
-  state = {};
+  state = {}
   constructor(props: SingleMountProps) {
     super(props);
     this.log("constructor");
@@ -25,11 +25,7 @@ export default class SingleMount extends React.Component<SingleMountProps> {
 
   render() {
     this.log("render");
-    return (
-      <div>
-        <div>{this.props.name}</div>
-        <div>{this.props.children}</div>
-      </div>
-    );
+    return <div>{this.props.name}</div>;
   }
 }
+
