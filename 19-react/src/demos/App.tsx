@@ -4,6 +4,7 @@ import StrictMode from "./StrictMode";
 import Key from "./Key";
 import LifeCycle from "./LifeCycle";
 import FunctionLifeCycle from "./FunctionLifeCycle";
+import Context from "./Context";
 
 function App() {
   return (
@@ -11,11 +12,13 @@ function App() {
       <p>---StrictMode---</p>
       {false && <StrictMode />}
       <p>---key---</p>
-      {false && <Key /> }
+      {false && <Key />}
       <p>---LifeCycle---</p>
-      {false && <LifeCycle /> }
+      {false && <LifeCycle />}
       <p>---FunctionLifeCycle---</p>
-      <FunctionLifeCycle />
+      {false && <FunctionLifeCycle />}
+      <p>---Context---</p>
+      <Context />
     </div>
   );
 }
