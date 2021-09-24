@@ -35,6 +35,6 @@ export default class ClassComponent extends React.Component<
 
   render() {
     log("---render---");
-    return <div>---render---</div>;
+    return null;
   }
 }

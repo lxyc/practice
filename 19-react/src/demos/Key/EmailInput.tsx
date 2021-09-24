@@ -9,11 +9,6 @@ interface EmailInputState {
 class EmailInput extends React.Component<EmailInputProps, EmailInputState> {
   state = { email: this.props.defaultEmail };
 
-  constructor(props: any) {
-    super(props)
-    console.log(123456)
-  }
-
   handleChange = (event: any) => {
     this.setState({ email: event.target.value });
   };
