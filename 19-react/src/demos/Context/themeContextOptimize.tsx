@@ -15,6 +15,8 @@ export const defaultThemeCtx: ThemeCtxType = [
 
 // 创建 Context 对象
 const ThemeContext = React.createContext(defaultThemeCtx);
+// 方便 React DevTools 调试
+ThemeContext.displayName = 'ThemeContext';
 
 export const ThemeProvider = (props: { children: React.ReactNode }) => {
   const themeState = React.useState(EnumTheme.dark);

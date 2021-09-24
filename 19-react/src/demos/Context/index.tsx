@@ -1,9 +1,9 @@
-import ClassBase from "./ClassBase";
-// import FunctionBase from "./FunctionBase";
+// import ClassBase from "./ClassBase";
+import FunctionBase from "./FunctionBase";
 
 const Context = () => {
-  return <ClassBase />;
-	// return <FunctionBase />
+  // return <ClassBase />;
+	return <FunctionBase />
 };
 
 export default Context;
