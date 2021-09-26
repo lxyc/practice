@@ -2,18 +2,18 @@ import React from "react";
 // import ThemeContext, { EnumTheme,  } from "./themeContext";
 import ThemeContext, { EnumTheme, ThemeProvider } from "./themeContextOptimize";
 
-const FunctionBase = () => {
-  const themeState = React.useState(EnumTheme.dark);
+// const FunctionBase = () => {
+//   const themeState = React.useState(EnumTheme.dark);
 
-  return (
-    // 通过 ThemeContext.Provider，其后代组件均可获取 value 中的值
-    <ThemeContext.Provider value={themeState}>
-      <Parent>
-        <Child />
-      </Parent>
-    </ThemeContext.Provider>
-  );
-};
+//   return (
+//     // 通过 ThemeContext.Provider，其后代组件均可获取 value 中的值
+//     <ThemeContext.Provider value={themeState}>
+//       <Parent>
+//         <Child />
+//       </Parent>
+//     </ThemeContext.Provider>
+//   );
+// };
 
 const OptimizeBase = () => (
   <ThemeProvider>
