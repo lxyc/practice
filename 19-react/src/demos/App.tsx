@@ -5,6 +5,7 @@ import Key from "./Key";
 import LifeCycle from "./LifeCycle";
 import FunctionLifeCycle from "./FunctionLifeCycle";
 import Context from "./Context";
+import Ref from './Ref'
 
 function App() {
   return (
@@ -19,6 +20,8 @@ function App() {
       {false && <FunctionLifeCycle />}
       <p>---Context---</p>
       <Context />
+      <p>---Ref---</p>
+      <Ref />
     </div>
   );
 }
