@@ -1,18 +1,20 @@
 import React from "react";
 
-const FancyButton = React.forwardRef<
-  HTMLButtonElement,
-  { children: React.ReactNode }
->((props, ref) => {
-  return <button ref={ref}>{props.children}</button>;
-});
+const Child = React.forwardRef<HTMLInputElement>((_, ref) => (
+  <div>
+    <span>forwardRef child: </span>
+    <input type="text" ref={ref} />
+  </div>
+));
 
 const ForwardRef = () => {
-	const ref = React.useRef<HTMLButtonElement>(null)
-	React.useEffect(() => {
-		console.log(ref.current)
-	}, [])
-	return <FancyButton ref={ref}>Click me!</FancyButton>;
-}
+  const childInputRef = React.useRef<HTMLInputElement>(null);
 
-export default ForwardRef
+  React.useEffect(() => {
+    childInputRef.current!.focus();
+  }, []);
+	
+  return <Child ref={childInputRef} />;
+};
+
+export default ForwardRef;
