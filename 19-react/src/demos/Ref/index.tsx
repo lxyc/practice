@@ -5,6 +5,7 @@ import ForwardRef from './ForwardRef';
 import InstanceClass from './InstanceClass'
 import InstanceFunction from './InstanceFunction'
 import MultiRef from './MultiRef'
+import UseRefDemo from './UseRefDemo'
 
 const Ref = () => {
   return <div>
@@ -14,6 +15,7 @@ const Ref = () => {
 		<InstanceClass />
 		<InstanceFunction />
 		<MultiRef />
+		<UseRefDemo />
 	</div>;
 };
 
