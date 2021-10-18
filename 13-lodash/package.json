@@ -1,0 +1,15 @@
+{
+  "name": "13-lodash",
+  "version": "1.0.0",
+  "description": "",
+  "main": "01.chunk.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "xyc <tech_xyc@163.com>",
+  "license": "ISC",
+  "dependencies": {
+    "lodash": "4.17.21"
+  }
+}
