@@ -1,0 +1,15 @@
+{
+  "name": "02-javascript",
+  "version": "1.0.0",
+  "description": "",
+  "main": "轮询题.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "keywords": [],
+  "author": "xyc <tech_xyc@163.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "27.3.0"
+  }
+}
