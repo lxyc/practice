@@ -6,17 +6,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <style>
-      div {
+      .demo1 {
         background-color: #ccc;
+        line-height: 30px;
       }
-      span {
+      .demo1 span {
         display: inline-block;
+      }
+
+      .demo2 {
+        background-color: #ddd;
+      }
+      .demo2 img {
+        border: 1px solid;
+        /* vertical-align: bottom; */
+      }
+      .demo2 span {
+        background-color: #f00;
       }
     </style>
   </head>
   <body>
-    <div>
+    <div class="demo1">
       <span></span>
+    </div>
+
+    <div class="demo2">
+      <img src="https://v3.cn.vuejs.org/logo.png" height="100" alt="" />
+      <span>x</span>
     </div>
   </body>
 </html>

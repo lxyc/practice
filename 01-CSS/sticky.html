@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      .container {
+        width: 100%;
+        height: 2000px;
+        background-color: #ccc;
+        /* overflow: hidden; */
+      }
+      .gap {
+        height: 400px;
+      }
+			.sticky-container {
+				background-color: #ddd;
+				height: 500px;
+				/* overflow: hidden; */
+			}
+      .sticky {
+        position: sticky;
+        top: 50px;
+				/* bottom: 40px; */
+        width: 50px;
+        height: 50px;
+        background-color: #f00;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <div class="gap"></div>
+      <div class="sticky-container">
+        <div class="sticky"></div>
+      </div>
+    </div>
+  </body>
+</html>
