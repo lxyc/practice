@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.left {
+			width: 200px;
+			height: 200px;
+			background-color: #ccc;
+		}
+		.right {
+			background-color: #ddd;
+			height: 200px;
+		}
+
+		.container-calc {
+			font-size: 0;
+		}
+		.container-calc .left {
+			font-size: initial;
+			display: inline-block;
+			vertical-align: bottom;
+		}
+		.container-calc .right {
+			font-size: initial;
+			display: inline-block;
+			width: calc(100% - 200px);
+			vertical-align: bottom;
+		}
+
+		.container-float .left {
+			float: left;
+		}
+		.container-float .right {
+			overflow: hidden;
+		}
+
+		.container-position {
+			position: relative;
+		}
+		.container-position .right {
+			position: absolute;
+			top: 0;
+			left: 200px;
+			right: 0;
+		}
+
+		.container-flex {
+			display: flex;
+		}
+		.container-flex .right {
+			flex: 1;
+		}
+
+
+		.container-table {
+			display: table;
+			width: 100%;
+		}
+		.container-table > div {
+			display: table-cell;
+		}
+	</style>
+</head>
+<body>
+	<div class="container-calc">
+		<div class="left">left</div>
+		<div class="right">right</div>
+	</div>
+	<p></p>
+	<div class="container-float">
+		<div class="left">left</div>
+		<div class="right">right</div>
+	</div>
+	<p></p>
+	<div class="container-position">
+		<div class="left">left</div>
+		<div class="right">right</div>
+	</div>
+	<p></p>
+	<div class="container-flex">
+		<div class="left">left</div>
+		<div class="right">right</div>
+	</div>
+	<p></p>
+	<div class="container-table">
+		<div class="left">left</div>
+		<div class="right">right</div>
+	</div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<style>
+		.container {
+			width: 300px;
+			height: 200px;
+			border: 1px solid;
+		}
+		.inner {
+			width: 80px;
+			height: 80px;
+			background-color: #ccc;
+		}
+
+		.center-lineheight {
+			font-size: 0;
+			line-height: 200px;
+			text-align: center;
+		}
+		.center-lineheight .inner {
+			font-size: initial;
+			line-height: initial;
+			display: inline-block;
+			vertical-align: middle;
+		}
+
+		.center-position1 {
+			position: relative;
+		}
+		.center-position1 .inner {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			margin-left: -40px;
+			margin-top: -40px;
+		}
+
+		.center-position2 {
+			position: relative;
+		}
+		.center-position2 .inner {
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate3d(-50%, -50%, 0);
+		}
+
+		.center-flex {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+		}
+	</style>
+</head>
+<body>
+	<div class="container center-lineheight">
+		<div class="inner">居中</div>
+	</div>
+	<p></p>
+	<div class="container center-position1">
+		<div class="inner">居中</div>
+	</div>
+	<p></p>
+	<div class="container center-position2">
+		<div class="inner">居中</div>
+	</div>
+	<p></p>
+	<div class="container center-flex">
+		<div class="inner">居中</div>
+	</div>
+</body>
+</html>
